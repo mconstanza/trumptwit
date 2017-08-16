@@ -1,0 +1,25 @@
+{
+  "name": "trumptwit",
+  "version": "1.0.0",
+  "description": "tweets from glorious leader",
+  "main": "twit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mconstanza/trumptwit.git"
+  },
+  "author": "MConstanza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mconstanza/trumptwit/issues"
+  },
+  "homepage": "https://github.com/mconstanza/trumptwit#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "moment": "^2.18.1",
+    "nodemailer": "^4.0.1",
+    "twitter": "^1.7.1"
+  }
+}
