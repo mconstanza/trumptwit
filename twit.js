@@ -83,7 +83,7 @@ emailTweets = (tweets) => {
   // console.log(mailText);
   var mailOptions = {
     from: process.env.GMAIL_USER + '@gmail.com',
-    to: process.env.GMAIL_USER + '@gmail.com',
+    to: process.env.EMAIL_RECIPIENT,
     subject: "Your Daily Report on Shit Our President Says for " + moment(Date.now()).format('MM DD YYYY').toString(),
     text: mailText
   }
