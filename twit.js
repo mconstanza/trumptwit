@@ -27,7 +27,7 @@ var client = new Twitter(
 var recordedTweets = 'tweets.txt' || fs.writeFile('tweets.txt', '');
 
 // Fetch Tweets
-client.get('search/tweets',{from: 'realdonaldtrump'}, function (error, tweets, response) {
+client.get('search/tweets',{from: 'realdonaldtrump'}, (error, tweets, response) => {
   if(error) {
     console.log(error);
   }
@@ -41,7 +41,7 @@ client.get('search/tweets',{from: 'realdonaldtrump'}, function (error, tweets, r
 // ----------------------- FUNCTIONS---------------------------
 
 // Loop through and record all tweet IDs
-function recordTweets(tweets) {
+recordTweets = (tweets) => {
   var tweetsToSend = [];
   for (i = 0; i < tweets.length; i++) {
     var tweet = tweets[i]
@@ -64,6 +64,7 @@ function recordTweets(tweets) {
   return tweetsToSend;
 }
 
+// Check if tweet id is in log
 tweetRecorded = (tweetId) => {
     var text = fs.readFileSync(recordedTweets, 'utf8');
     // console.log(text);
@@ -74,6 +75,7 @@ tweetRecorded = (tweetId) => {
     }
 }
 
+// Prepare tweets for email and send
 emailTweets = (tweets) => {
   var mailText = '';
   for (i=0;i<tweets.length;i++) {
