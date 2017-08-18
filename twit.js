@@ -80,12 +80,13 @@ emailTweets = (tweets) => {
   var mailText = '';
   for (i=0;i<tweets.length;i++) {
     var tweet = tweets[i];
-    mailText += tweet.date + '\n' + tweet.text + '\n\n'
+    mailText += tweet.date + '\n\n' + tweet.text + '\n\n\n'
   }
   // console.log(mailText);
   var mailOptions = {
     from: process.env.GMAIL_USER + '@gmail.com',
-    to: process.env.EMAIL_RECIPIENT,
+    // to: process.env.EMAIL_RECIPIENT,
+    to: process.env.GMAIL_USER + '@gmail.com',
     subject: "Your Daily Report on Shit Our President Says for " + moment(Date.now()).format('MM DD YYYY').toString(),
     text: mailText
   }
